@@ -1,17 +1,20 @@
 <?php
 
+namespace App\Entity;
 
-
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Messagetype
  *
  * @ORM\Table(name="messageType")
+ * @ApiResource
  * @ORM\Entity
  */
 class Messagetype
 {
+
     /**
      * @var integer
      *
@@ -28,6 +31,32 @@ class Messagetype
      */
     private $type;
 
+	/**
+	 * @return int
+	 */
+	public function getId() {
+		return $this->id;
+	}
 
+	/**
+	 * @param int $id
+	 */
+	public function setId( $id ) {
+		$this->id = $id;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getType() {
+		return $this->type;
+	}
+
+	/**
+	 * @param string $type
+	 */
+	public function setType( $type ) {
+		$this->type = $type;
+	}
 }
 
